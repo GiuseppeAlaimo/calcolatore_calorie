@@ -2,7 +2,7 @@
 # Autore: Alaimo Giuseppe
 
 
-#calcolare BMR = Basic Metabolic Rate
+# Calcolo BMR (Basic Metabolic Rate)
 def calcolo_BMR(sesso, peso, altezza, anni):
 	if (sesso == "uomo" or "maschio"):
 		bmr = 66.5 + (13.75 * peso) + (5.003 * altezza) - (6.755 * anni)
@@ -15,8 +15,8 @@ def calcolo_BMR(sesso, peso, altezza, anni):
 # Calcolo DCR (Daily Calorie Requirement)
 def calcolo_dcr(BRM):
 	dcr = BRM
-	ti_alleni = input("Ti alleni regolarmente? Si o No? ")
-	if (ti_alleni == "si"):
+	ti_alleni = input("Ti alleni regolarmente? Sì o No? ")
+	if (ti_alleni == "si" or ti_alleni == "sì"):
 		quante_volte = int(input("Quante volte a settimana? "))
 		if (quante_volte == 1):
 			dcr = BMR * 1.2
@@ -32,14 +32,14 @@ def calcolo_dcr(BRM):
 	return dcr
 
 
-# Calcolo calorie per dimagrire o mettere massa
+# Calcolo delle calorie per dimagrire o mettere massa
 def dimagrire_ingrassare(dcr):
 	print("Per aumentare di peso devi assumere dalle", round(dcr + 300, 2), "alle", round(dcr + 500, 2), "calorie")
 	print("Per diminuire di peso devi assumere dalle", round(dcr - 500), "alle", round(dcr - 300), "calorie")
 
 
 # Inserimento dati
-sesso = input("Inserisci il sesso: ")
+sesso = input("Inserisci il tuo sesso: ")
 peso = int(input("Inserisci il tuo peso: "))
 altezza = int(input("Inserisci la tua altezza: "))
 anni = int(input("Inserisci la tua età: "))
