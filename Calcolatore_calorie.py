@@ -1,4 +1,5 @@
-#Calories and macro calculator
+# Calcolatore delle calorie
+# Autore: Alaimo Giuseppe
 
 
 #calcolare BMR = Basic Metabolic Rate
@@ -10,10 +11,6 @@ def calcolo_BMR(sesso, peso, altezza, anni):
 	print("Il tuo metabolismo basale è di calorie", round(bmr, 2))
 	return bmr
 
-# Calcolo calorie per dimagrire o mettere massa
-def calcolo_calorie(dcr):
-	print("Per aumentare di peso devi assumere dalle", round(dcr + 300, 2), "alle", round(dcr + 500, 2), "calorie")
-	print("Per diminuire di peso devi assumere dalle", round(dcr - 500), "alle", round(dcr - 300), "calorie")
 
 # Calcolo DCR (Daily Calorie Requirement)
 def calcolo_dcr(BRM):
@@ -34,6 +31,13 @@ def calcolo_dcr(BRM):
 		print("Allenarsi fa bene alla salute!")
 	return dcr
 
+
+# Calcolo calorie per dimagrire o mettere massa
+def dimagrire_ingrassare(dcr):
+	print("Per aumentare di peso devi assumere dalle", round(dcr + 300, 2), "alle", round(dcr + 500, 2), "calorie")
+	print("Per diminuire di peso devi assumere dalle", round(dcr - 500), "alle", round(dcr - 300), "calorie")
+
+
 # Inserimento dati
 sesso = input("Inserisci il sesso: ")
 peso = int(input("Inserisci il tuo peso: "))
@@ -43,4 +47,4 @@ anni = int(input("Inserisci la tua età: "))
 # Calcolo di tutti i dati
 BMR = calcolo_BMR(sesso, peso, altezza, anni)
 DCR = calcolo_dcr(BMR)
-calcolo_calorie(DCR)
+dimagrire_ingrassare(DCR)
